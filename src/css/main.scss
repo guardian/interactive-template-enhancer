@@ -1,0 +1,30 @@
+@import "mq";
+
+.content__main-column--interactive {
+    p, h2, .element-interactive {
+        max-width: 620px;
+
+        @include mq(leftCol) {
+            margin-left: 160px;
+        }
+        @include mq(wide) {
+            margin-left: 240px;
+        }
+    }
+
+    h2 {
+    	font-family: "Guardian Egyptian Web", Georgia;
+    	font-size: 36px;
+    	line-height: 42px;
+    	font-weight: 200 !important;
+    	color: #333;
+    	margin-top: 36px;
+    	margin-bottom: 6px;
+    }
+
+    .element--immersive {
+    	max-width: initial;
+    	margin-left: 0;
+        margin-bottom: 36px;
+    }
+}
