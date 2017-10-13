@@ -1,18 +1,18 @@
 @import "mq";
 
 .content__main-column--interactive {
-    p, h2, .element-interactive {
+    & > p, & > h2, .element-interactive,.element-atom { 
         max-width: 620px;
 
         @include mq(leftCol) {
-            margin-left: 160px;
+            margin-left: 160px !important;
         }
         @include mq(wide) {
-            margin-left: 240px;
+            margin-left: 240px !important;
         }
     }
 
-    h2 {
+    & > h2 {
     	font-family: "Guardian Egyptian Web", Georgia;
     	font-size: 36px;
     	line-height: 42px;
@@ -24,7 +24,11 @@
 
     .element--immersive {
     	max-width: initial;
-    	margin-left: 0;
-        margin-bottom: 36px;
+    	margin-left: 0 !important;
+        margin-bottom: 36px !important;
+    } 
+
+    .element--showcase {
+        
     }
 }
