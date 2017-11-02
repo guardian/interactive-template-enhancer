@@ -117,3 +117,163 @@
         white-space: pre;
     }
 }
+
+@include mq($from: leftCol, $until: wide) {
+
+    .element--showcase, .element--immersive {
+        margin-left: 80px !important;
+    }
+
+}
+
+@import "mq";
+@import "fonts";
+
+.content__main-column {
+    @include mq($from: tablet, $until: desktop) {
+        max-width: none;
+    }
+}
+
+.content__dateline {
+    @include mq($from: tablet, $until: desktop) {
+        padding-bottom: 0.5rem;
+    }
+}
+
+.badge {
+
+    max-width: 140px;
+
+    @include mq($until: desktop) {
+        float: none;
+        margin-top: 12px;
+    }
+
+    @include mq(desktop) {
+        right: -24rem;
+    }
+
+    @include mq(leftCol) {
+        top: 48px;
+        left: -160px;
+    }
+
+    @include mq(wide) {
+        top: 48px;
+        left: -240px;
+    }
+}
+
+.badge--interactive {
+    min-height: 0;
+}
+
+.interactive-ad-banner {
+    margin-left: 160px !important;
+}
+
+.content__head {
+    background-color: #f6f6f6;
+    position: relative;
+    .gs-container {
+        background-image: url('<%= path %>/assets/3c-header@2x.png');//background-image: url('https://interactive.guim.co.uk/atoms/2017/07/bolt-timer/track-bg.png');
+        background-repeat: no-repeat;
+        background-position: top right;
+        overflow: hidden;
+        @include mq(tablet) {
+            height: auto;
+
+        }
+
+        @include mq($until: desktop) {
+            background-image: url('<%= path %>/assets/3c-header-transparent@2x.png');
+            background-size: auto 100%;
+            background-position: top left;
+
+        }
+
+        min-height: 300px;
+
+        background-size: auto 100%;
+        position: relative;
+
+    }
+
+    .content__main-column {
+        z-index: 300;
+        @include mq(tablet, desktop) {
+            margin-left: 0;
+        }
+    }
+
+    .content__headline {
+        @include fs-headline(9);
+        font-size: 56px;
+        line-height: 58px;
+        font-weight: 300;
+        padding-bottom: 12px;
+        @include mq(tablet, desktop) {
+            font-size: 48px;
+            line-height: 50px;
+        }
+    }
+
+    @include mq($until: tablet) {
+        .gs-container {
+
+            &:after {
+                right: 10px;
+                height: 200px;
+                width: 260px;
+                bottom: 0;
+                //background-image: url('<%= path %>/assets/3c-header@2x.png');
+                background-size: cover;
+            }
+        }
+
+        .content__main-column {
+            top: 4px;
+        }
+
+        .content__headline {
+            @include fs-headline(7);
+            font-weight: 300;
+        }
+    }
+
+    @include mq(tablet, desktop) {
+        .gs-container {
+            &:after {
+                height: 270px;
+                width: 348px;
+            }
+        }
+
+        .content__main-column {
+            top: 12px;
+        }
+    }
+
+    @include mq(desktop, wide) {
+        .content__main-column {
+            max-width: 560px;
+        }
+    }
+}
+
+.meta__extras {
+    border: 0 !important
+}
+
+.element-embed img {
+    max-width: 620px;
+
+    @include mq(leftCol) {
+        margin-left: 160px;
+    }
+
+    @include mq(wide) {
+        margin-left: 240px;
+    }
+}
