@@ -1,7 +1,11 @@
 @import "mq";
+@import "fonts";
 
 .content__main-column--interactive {
-    & > p, & > h2, .element-interactive,.element-atom { 
+    &>p,
+    &>h2,
+    .element-interactive,
+    .element-atom {
         max-width: 620px;
 
         @include mq(leftCol) {
@@ -12,23 +16,104 @@
         }
     }
 
-    & > h2 {
-    	font-family: "Guardian Egyptian Web", Georgia;
-    	font-size: 36px;
-    	line-height: 42px;
-    	font-weight: 200;
-    	color: #333;
-    	margin-top: 36px;
-    	margin-bottom: 6px;
+    &>h2 {
+        font-family: "Guardian Egyptian Web", Georgia;
+        font-size: 36px;
+        line-height: 42px;
+        font-weight: 200;
+        color: #333;
+        margin-top: 36px;
+        margin-bottom: 6px;
+    }
+
+    &>h2:not(:first-of-type) {
+        &+p {
+            font-family: "Guardian Text Sans Web";
+            font-size: 14px;
+            line-height: 18px;
+            color: #005689;
+            font-weight: bold;
+            margin-top: 2px !important;
+            margin-bottom: 24px;
+        }
+    }
+
+    .element--immersive:nth-of-type(2) {
+        @include mq(tablet) {
+            margin-top: -100px;
+        }
     }
 
     .element--immersive {
-    	max-width: initial;
-    	margin-left: 0 !important;
+        max-width: 1080px;
+        margin-left: 0 !important;
         margin-bottom: 36px !important;
-    } 
+
+        @include mq(leftCol) {
+            margin-left: 160px !important;
+        }
+
+        @include mq(wide) {
+            margin-left: 80px !important;
+        }
+    }
 
     .element--showcase {
-        
+        @include mq($until: tablet) {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        @include mq(leftCol) {
+            max-width: 780px;
+            margin-left: 160px !important;
+        }
+    }
+
+    p,
+    h2 {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.content__headline {
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 45px;
+}
+
+.interactive-key {
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    p {
+        display: inline;
+        color: #000;
+        @include fs-header(2);
+        line-height: 30px;
+        @include mq(desktop) {
+            @include fs-header(4);
+            line-height: 35px;
+        }
+        // overflow: hidden;
+    }
+
+    span {
+        display: inline-block;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #bdbdbd;
+        line-height: 28px;
+        height: 28px;
+        border-radius: 100px;
+
+        @include mq(desktop) {
+            line-height: 33px;
+            height: 32px;
+        }
+
+        transform: translateY(0px);
+        white-space: pre;
     }
 }
