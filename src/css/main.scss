@@ -14,13 +14,25 @@
 
     & > h2 {
     	font-family: "Guardian Egyptian Web", Georgia;
-    	font-size: 36px;
-    	line-height: 42px;
-    	font-weight: 200;
+    	font-size: 24px;
+    	line-height: 28px;
+    	font-weight: 900;
     	color: #333;
     	margin-top: 36px;
     	margin-bottom: 6px;
     }
+
+    &>h2 {
+        &+p {
+            font-family: "Guardian Text Sans Web";
+            font-size: 14px;
+            line-height: 18px;
+            color: #767676;
+            margin-top: 2px !important;
+            margin-bottom: 24px;
+        }
+    }
+
 
     .element--immersive {
     	max-width: initial;
