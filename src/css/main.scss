@@ -44,3 +44,73 @@
         
     }
 }
+
+.content__head--interactive {
+    //background-color: #f6f6f6;
+    position: relative;
+    .gs-container {
+
+
+        @include mq($until: mobileLandscape) {
+
+            background-image: url('<%= path %>/assets/globe_half.png');
+            background-size: 100% auto;
+            background-position: center top;
+            background-repeat: no-repeat;
+
+        }
+
+        overflow: hidden;
+
+        //min-height: 312px;
+
+        // @include mq($until: mobileLandscape) {
+        //     min-height: calc(50vw);
+        // }
+
+        border-top: transparent;
+        background-clip: border-box;
+        position: relative;
+        padding-bottom: 12px;
+
+        @include mq($from: mobileLandscape) {
+        //    background-position: 2% 6px;
+        //    background-size: 300px auto;
+            min-height: 264px;
+        }
+
+        &::after {
+
+            @include mq($from: mobileLandscape) {
+
+                background-image: url('<%= path %>/assets/globe.png');
+                background-size: 100% 100%;
+                content: '';
+            }
+
+            @include mq($from: mobileLandscape) {
+                width: 240px;
+                height: 240px;
+                top: 12px;
+            }
+
+            left: 10px;
+
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: block;
+            top: 50px;
+            z-index: -1;
+        }
+
+    }
+
+}
+
+.content__headline {
+    @include mq($until: tablet) {
+        //padding-top: 48px;
+    }
+}
