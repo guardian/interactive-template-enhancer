@@ -2,6 +2,7 @@
 @import "fonts";
 
 $oscar: #e9cb9e;
+$oscar-dark:  #a88556;
 
 .content__main-column--interactive {
     & > p, & > h2, .element-interactive,.element-atom { 
@@ -97,15 +98,17 @@ $oscar: #e9cb9e;
             background-color: black;
             color: white;
             padding: 0 6px 4px 6px;
-            top: 2079px;
+            top: 2080px;
             left: 140px;
 
-            @include mq($until: leftCol) {
+            // @include mq($until: leftCol) {
+            //     left: 
+            // }
+
+            @include mq($until: desktop) {
                 top: 2072px;
                 left: 110px;
             }
-
-            @include mq
 
         }
 
@@ -165,11 +168,19 @@ $oscar: #e9cb9e;
 
     .gs-container {
         @include mq($until: leftCol) {
-            max-width: 100%;
-            width: 80%;
+            max-width: 980px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        @include mq($until: desktop) {
+            //width: calc(100% - 120px);
+            width: 100%;
+            max-width: 740px;
+            margin: 0 auto;
         }
         @include mq($until: tablet) {
             width: 100%;
+            margin: 0 0;
         }
     }
 }
@@ -177,11 +188,25 @@ $oscar: #e9cb9e;
 .content__standfirst {
 
     position: absolute;
-    top: 180px;
+    top: 162px;
     width: 350px;
     @include fs-headline(4);
+
+    & a {
+        color: $oscar-dark;
+        @include fs-headline(3);
+        font-size: 18px;
+        font-weight: 900;
+
+        border-bottom: 1px solid white !important;
+    }
+
 }
 
 .content__dateline {
+    display: none !important;
+}
+
+.content__labels {
     display: none !important;
 }
