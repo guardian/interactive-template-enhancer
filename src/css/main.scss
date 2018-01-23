@@ -189,16 +189,24 @@ $oscar-dark:  #a88556;
 
     position: absolute;
     top: 162px;
-    width: 350px;
+    width: 360px;
     @include fs-headline(4);
 
     & a {
-        color: $oscar-dark;
+        color: white;
         @include fs-headline(3);
         font-size: 18px;
         font-weight: 900;
 
         border-bottom: 1px solid white !important;
+    }
+
+    @include mq($until: desktop) {
+        position: absolute;
+            top: 135px;
+            width: 300px;
+            font-size: 20px;
+            line-height: 25px;
     }
 
 }
@@ -209,4 +217,17 @@ $oscar-dark:  #a88556;
 
 .content__labels {
     display: none !important;
+}
+
+.content__main-column--interactive p:first-child:first-letter {
+    display: inline-block;
+    background-image: url('<%= path %>/assets/dropcap.svg');
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 6px;
+    margin-right: 8px;
+    padding-right: 141px;
+    line-height: 159px;
+    font-size: 0px;
 }
