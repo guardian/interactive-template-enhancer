@@ -55,8 +55,11 @@ $oscar: #e9cb9e;
         @include mq($until: desktop) {
             //background-image: url('<%= path %>/assets/3c-header-transparent@2x.png');
             background-position: right -20px;
-            width: 90%;
 
+        }
+
+        @include mq($until: tablet) {
+            background-position: calc(100% + 200px) -20px;
         }
 
         min-height: 300px;
@@ -74,6 +77,38 @@ $oscar: #e9cb9e;
 
     .content__headline {
         @include fs-headline(9);
+        font-weight: 900;
+
+        position: absolute;
+        top: -2000px;
+
+        &:before {
+            content: "All-time";
+            position: absolute;
+            background-color: white;
+            padding: 0 6px 4px 6px;
+            top: 2024px;
+
+        }
+
+        &:after {
+            content: "Oscars";
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: 0 6px 4px 6px;
+            top: 2079px;
+            left: 140px;
+
+            @include mq($until: leftCol) {
+                top: 2072px;
+                left: 110px;
+            }
+
+            @include mq
+
+        }
+
         font-size: 56px;
         line-height: 58px;
         padding-bottom: 12px;
@@ -101,7 +136,8 @@ $oscar: #e9cb9e;
         }
 
         .content__headline {
-            @include fs-headline(7);
+            @include fs-headline(9);
+            font-weight: 900;
         }
     }
 
@@ -120,12 +156,32 @@ $oscar: #e9cb9e;
 
     @include mq(desktop, wide) {
         .content__main-column {
-            max-width: 560px;
+            //max-width: 560px;
+        }
+    }
+}
+
+.content__head {
+
+    .gs-container {
+        @include mq($until: leftCol) {
+            max-width: 100%;
+            width: 80%;
+        }
+        @include mq($until: tablet) {
+            width: 100%;
         }
     }
 }
 
 .content__standfirst {
-    width: 300px;
-    @include fs-headline(3);
+
+    position: absolute;
+    top: 180px;
+    width: 350px;
+    @include fs-headline(4);
+}
+
+.content__dateline {
+    display: none !important;
 }
