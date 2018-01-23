@@ -1,4 +1,7 @@
 @import "mq";
+@import "fonts";
+
+$oscar: #e9cb9e;
 
 .content__main-column--interactive {
     & > p, & > h2, .element-interactive,.element-atom { 
@@ -16,7 +19,6 @@
     	font-family: "Guardian Egyptian Web", Georgia;
     	font-size: 36px;
     	line-height: 42px;
-    	font-weight: 200;
     	color: #333;
     	margin-top: 36px;
     	margin-bottom: 6px;
@@ -31,4 +33,99 @@
     .element--showcase {
         
     }
+}
+
+.content__head {
+    background-color: $oscar;
+    position: relative;
+    .gs-container {
+        background-image: url('<%= path %>/assets/statue.png');//background-image: url('https://interactive.guim.co.uk/atoms/2017/07/bolt-timer/track-bg.png');
+        background-repeat: no-repeat;
+        background-position: top right;
+        overflow: hidden;
+
+        background-size: 400px auto;
+        background-position: 96% -20px;
+
+        @include mq(tablet) {
+            height: auto;
+
+        }
+
+        @include mq($until: desktop) {
+            //background-image: url('<%= path %>/assets/3c-header-transparent@2x.png');
+            background-position: right -20px;
+            width: 90%;
+
+        }
+
+        min-height: 300px;
+
+        position: relative;
+
+    }
+
+    .content__main-column {
+        z-index: 300;
+        @include mq(tablet, desktop) {
+            margin-left: 0;
+        }
+    }
+
+    .content__headline {
+        @include fs-headline(9);
+        font-size: 56px;
+        line-height: 58px;
+        padding-bottom: 12px;
+        @include mq(tablet, desktop) {
+            font-size: 48px;
+            line-height: 50px;
+        }
+    }
+
+    @include mq($until: tablet) {
+        .gs-container {
+
+            &:after {
+                right: 10px;
+                height: 200px;
+                width: 260px;
+                bottom: 0;
+                //background-image: url('<%= path %>/assets/3c-header@2x.png');
+                background-size: cover;
+            }
+        }
+
+        .content__main-column {
+            top: 4px;
+        }
+
+        .content__headline {
+            @include fs-headline(7);
+        }
+    }
+
+    @include mq(tablet, desktop) {
+        .gs-container {
+            &:after {
+                height: 270px;
+                width: 348px;
+            }
+        }
+
+        .content__main-column {
+            top: 12px;
+        }
+    }
+
+    @include mq(desktop, wide) {
+        .content__main-column {
+            max-width: 560px;
+        }
+    }
+}
+
+.content__standfirst {
+    width: 300px;
+    @include fs-headline(3);
 }
