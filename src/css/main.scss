@@ -285,14 +285,16 @@ $oscar-dark: #a88556;
 }
 
 .content__main-column--interactive p:first-child:first-letter {
-    display: inline-block;
-    background-image: url('<%= path %>/assets/dropcap.svg');
+    font-size: 114px;
+    line-height: 90px;
+    margin-right: 10px;
+    font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
+    font-weight: 900;
     float: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-top: 6px;
-    margin-right: 8px;
-    padding-right: 141px;
-    line-height: 159px;
-    font-size: 0px;
+}
+
+.prose ul>li:before {
+    width: 0;
+    height: 0;
+    display: none;
 }
