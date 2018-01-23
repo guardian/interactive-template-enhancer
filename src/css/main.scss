@@ -2,10 +2,13 @@
 @import "fonts";
 
 $oscar: #e9cb9e;
-$oscar-dark:  #a88556;
+$oscar-dark: #a88556;
 
 .content__main-column--interactive {
-    & > p, & > h2, .element-interactive,.element-atom { 
+    &>p,
+    &>h2,
+    .element-interactive,
+    .element-atom {
         max-width: 620px;
 
         @include mq(leftCol) {
@@ -16,31 +19,29 @@ $oscar-dark:  #a88556;
         }
     }
 
-    & > h2 {
-    	font-family: "Guardian Egyptian Web", Georgia;
-    	font-size: 36px;
-    	line-height: 42px;
-    	color: #333;
-    	margin-top: 36px;
-    	margin-bottom: 6px;
+    &>h2 {
+        font-family: "Guardian Egyptian Web", Georgia;
+        font-size: 36px;
+        line-height: 42px;
+        color: #333;
+        margin-top: 36px;
+        margin-bottom: 6px;
     }
 
     .element--immersive {
-    	max-width: initial;
-    	margin-left: 0 !important;
+        max-width: initial;
+        margin-left: 0 !important;
         margin-bottom: 36px !important;
-    } 
-
-    .element--showcase {
-        
     }
+
+    .element--showcase {}
 }
 
 .content__head {
     background-color: $oscar;
     position: relative;
     .gs-container {
-        background-image: url('<%= path %>/assets/statue.png');//background-image: url('https://interactive.guim.co.uk/atoms/2017/07/bolt-timer/track-bg.png');
+        background-image: url('<%= path %>/assets/statue.png'); //background-image: url('https://interactive.guim.co.uk/atoms/2017/07/bolt-timer/track-bg.png');
         background-repeat: no-repeat;
         background-position: top right;
         overflow: hidden;
@@ -50,13 +51,11 @@ $oscar-dark:  #a88556;
 
         @include mq(tablet) {
             height: auto;
-
         }
 
         @include mq($until: desktop) {
             //background-image: url('<%= path %>/assets/3c-header-transparent@2x.png');
             background-position: right -20px;
-
         }
 
         @include mq($until: tablet) {
@@ -66,12 +65,12 @@ $oscar-dark:  #a88556;
         min-height: 300px;
 
         position: relative;
-
     }
 
     .content__main-column {
         z-index: 300;
-        @include mq(tablet, desktop) {
+        @include mq(tablet,
+        desktop) {
             margin-left: 0;
         }
     }
@@ -89,7 +88,6 @@ $oscar-dark:  #a88556;
             background-color: white;
             padding: 0 6px 4px 6px;
             top: 2024px;
-
         }
 
         &:after {
@@ -99,23 +97,20 @@ $oscar-dark:  #a88556;
             color: white;
             padding: 0 6px 4px 6px;
             top: 2080px;
-            left: 140px;
-
-            // @include mq($until: leftCol) {
+            left: 140px; // @include mq($until: leftCol) {
             //     left: 
             // }
-
             @include mq($until: desktop) {
                 top: 2072px;
                 left: 110px;
             }
-
         }
 
         font-size: 56px;
         line-height: 58px;
         padding-bottom: 12px;
-        @include mq(tablet, desktop) {
+        @include mq(tablet,
+        desktop) {
             font-size: 48px;
             line-height: 50px;
         }
@@ -128,8 +123,7 @@ $oscar-dark:  #a88556;
                 right: 10px;
                 height: 200px;
                 width: 260px;
-                bottom: 0;
-                //background-image: url('<%= path %>/assets/3c-header@2x.png');
+                bottom: 0; //background-image: url('<%= path %>/assets/3c-header@2x.png');
                 background-size: cover;
             }
         }
@@ -144,7 +138,8 @@ $oscar-dark:  #a88556;
         }
     }
 
-    @include mq(tablet, desktop) {
+    @include mq(tablet,
+    desktop) {
         .gs-container {
             &:after {
                 height: 270px;
@@ -157,7 +152,8 @@ $oscar-dark:  #a88556;
         }
     }
 
-    @include mq(desktop, wide) {
+    @include mq(desktop,
+    wide) {
         .content__main-column {
             //max-width: 560px;
         }
@@ -200,7 +196,6 @@ $oscar-dark:  #a88556;
 
         border-bottom: 1px solid white !important;
     }
-
 }
 
 .content__dateline {
@@ -209,4 +204,73 @@ $oscar-dark:  #a88556;
 
 .content__labels {
     display: none !important;
+}
+
+//app 
+.ios,
+.android {
+    .standfirst {
+        &:before {
+            @include fs-header(5);
+            font-size: 48px;
+            line-height: 48px;
+
+            content: "All-time";
+            font-family: "Guardian Headline";
+            position: absolute;
+            background-color: white;
+            padding: 0 6px 4px 6px;
+            top: 12px;
+            left: 10px;
+        }
+
+        &:after {
+            @include fs-header(5);
+            font-family: "Guardian Headline";
+            font-size: 48px;
+            line-height: 48px;
+            // line-height: 2.4rem;
+            content: "Oscars";
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: 0 6px 4px 6px;
+            top: 60px;
+            left: 134px; // @include mq($until: leftCol) {
+            //     left: 
+            // }
+        }
+
+        a {
+            margin-top: 12px;
+            display: inline-block;
+        }
+
+        font-size: 20px;
+        line-height: 24px;
+        clear: left;
+        width: 80%;
+        color: #000;
+    }
+
+    .headline {
+        opacity: 0;
+        display: block;
+        height: 120px;
+    }
+
+    .article__header {
+        background-color: #e9cb9e;
+        background-image: url(https://interactive.guim.co.uk/atoms/2018/01/interactive-oscar-enhancer/v/1516716748932/assets/statue.png);
+        background-repeat: no-repeat;
+        overflow: hidden;
+        background-size: 400px auto;
+        background-position: calc(100% + 200px) top;
+        min-height: 300px;
+        position: relative;
+    }
+
+    .keyline-4 {
+        display: none;
+    }
 }
