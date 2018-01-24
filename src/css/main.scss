@@ -271,7 +271,8 @@ $oscar-dark: #a88556;
             margin-top: 12px;
             display: inline-block;
             border: 0;
-            background-image: none;
+            background-image: none !important;
+            color: #fff !important;
         }
 
         font-size: 20px;
