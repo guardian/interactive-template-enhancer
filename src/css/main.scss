@@ -1,16 +1,13 @@
 @import "mq";
 @import "fonts";
-
 $oscar: #e9cb9e;
 $oscar-dark: #a88556;
-
 .content__main-column--interactive {
     &>p,
     &>h2,
     .element-interactive,
     .element-atom {
         max-width: 620px;
-
         @include mq(leftCol) {
             margin-left: 160px !important;
         }
@@ -18,7 +15,6 @@ $oscar-dark: #a88556;
             margin-left: 240px !important;
         }
     }
-
     &>h2 {
         font-family: "Guardian Egyptian Web", Georgia;
         font-size: 36px;
@@ -27,13 +23,11 @@ $oscar-dark: #a88556;
         margin-top: 36px;
         margin-bottom: 6px;
     }
-
     .element--immersive {
         max-width: initial;
         margin-left: 0 !important;
         margin-bottom: 36px !important;
     }
-
     .element--showcase {}
 }
 
@@ -45,35 +39,27 @@ $oscar-dark: #a88556;
         background-repeat: no-repeat;
         background-position: top right;
         overflow: hidden;
-
         background-size: 400px auto;
         background-position: 96% -20px;
-
         @include mq(tablet) {
             height: auto;
         }
-
         @include mq($until: desktop) {
             //background-image: url('<%= path %>/assets/3c-header-transparent@2x.png');
             background-position: right -20px;
         }
-
         @include mq($until: tablet) {
             background-position: calc(100% + 200px) -20px;
         }
-
         min-height: 326px;
-
         @include mq($until: desktop) {
             min-height: 300px;
         }
         @include mq($until: 350px) {
             min-height: 310px;
         }
-
         position: relative;
     }
-
     .content__main-column {
         z-index: 300;
         @include mq(tablet,
@@ -81,14 +67,11 @@ $oscar-dark: #a88556;
             margin-left: 0;
         }
     }
-
     .content__headline {
         @include fs-headline(9);
         font-weight: 900;
-
         position: absolute;
         top: -2000px;
-
         &:before {
             content: "Greatest Oscar";
             position: absolute;
@@ -96,7 +79,6 @@ $oscar-dark: #a88556;
             padding: 0 6px 4px 6px;
             top: 2024px;
         }
-
         &:after {
             content: "winners ever";
             position: absolute;
@@ -116,7 +98,6 @@ $oscar-dark: #a88556;
                 left: 0;
             }
         }
-
         font-size: 56px;
         line-height: 58px;
         padding-bottom: 12px;
@@ -134,10 +115,8 @@ $oscar-dark: #a88556;
             line-height: 42px;
         }
     }
-
     @include mq($until: tablet) {
         .gs-container {
-
             &:after {
                 right: 10px;
                 height: 200px;
@@ -146,17 +125,14 @@ $oscar-dark: #a88556;
                 background-size: cover;
             }
         }
-
         .content__main-column {
             top: 4px;
         }
-
         .content__headline {
             //@include fs-headline(9);
             //font-weight: 900;
         }
     }
-
     @include mq(tablet,
     desktop) {
         .gs-container {
@@ -165,12 +141,10 @@ $oscar-dark: #a88556;
                 width: 348px;
             }
         }
-
         .content__main-column {
             top: 12px;
         }
     }
-
     @include mq(desktop,
     wide) {
         .content__main-column {
@@ -180,7 +154,6 @@ $oscar-dark: #a88556;
 }
 
 .content__head {
-
     .gs-container {
         @include mq($until: leftCol) {
             max-width: 980px;
@@ -201,22 +174,18 @@ $oscar-dark: #a88556;
 }
 
 .content__standfirst {
-
     position: absolute;
     top: 162px;
     max-width: 400px;
     width: 96%;
     @include fs-headline(4);
-
     & a {
         color: white;
         @include fs-headline(3);
         font-size: 18px;
         font-weight: 900;
-
         border-bottom: 1px solid white !important;
     }
-
     @include mq($until: desktop) {
         position: absolute;
         top: 135px;
@@ -239,10 +208,9 @@ $oscar-dark: #a88556;
     .standfirst {
         &:before {
             @include fs-header(5);
-            font-size: 48px;
-            line-height: 48px;
-
-            content: "All-time";
+            font-size: 42px;
+            line-height: 42px;
+            content: "Greatest Oscar";
             font-family: "Guardian Headline";
             position: absolute;
             background-color: white;
@@ -250,23 +218,21 @@ $oscar-dark: #a88556;
             top: 12px;
             left: 10px;
         }
-
         &:after {
             @include fs-header(5);
             font-family: "Guardian Headline";
-            font-size: 48px;
-            line-height: 48px; // line-height: 2.4rem;
-            content: "Oscars";
+            font-size: 42px;
+            line-height: 42px; // line-height: 2.4rem;
+            content: "winners ever";
             position: absolute;
             background-color: black;
             color: white;
             padding: 0 6px 4px 6px;
-            top: 60px;
-            left: 134px; // @include mq($until: leftCol) {
+            top: 58px;
+            left: 10px; // @include mq($until: leftCol) {
             //     left: 
             // }
         }
-
         a {
             margin-top: 12px;
             display: inline-block;
@@ -274,20 +240,17 @@ $oscar-dark: #a88556;
             background-image: none !important;
             color: #fff !important;
         }
-
         font-size: 20px;
         line-height: 24px;
         clear: left;
         width: 80%;
         color: #000;
     }
-
     .headline {
         opacity: 0;
         display: block;
-        height: 120px;
+        height: 108px;
     }
-
     .article__header {
         background-color: #e9cb9e;
         background-image: url(https://interactive.guim.co.uk/atoms/2018/01/interactive-oscar-enhancer/v/1516716748932/assets/statue.png);
@@ -298,7 +261,6 @@ $oscar-dark: #a88556;
         min-height: 300px;
         position: relative;
     }
-
     .keyline-4 {
         display: none;
     }
@@ -308,7 +270,7 @@ $oscar-dark: #a88556;
     font-size: 114px;
     line-height: 90px;
     margin-right: 10px;
-    font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
+    font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
     font-weight: 900;
     float: left;
 }
