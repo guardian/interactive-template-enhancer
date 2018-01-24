@@ -62,7 +62,14 @@ $oscar-dark: #a88556;
             background-position: calc(100% + 200px) -20px;
         }
 
-        min-height: 300px;
+        min-height: 326px;
+
+        @include mq($until: desktop) {
+            min-height: 300px;
+        }
+        @include mq($until: 350px) {
+            min-height: 310px;
+        }
 
         position: relative;
     }
@@ -83,7 +90,7 @@ $oscar-dark: #a88556;
         top: -2000px;
 
         &:before {
-            content: "All-time";
+            content: "Greatest Oscar";
             position: absolute;
             background-color: white;
             padding: 0 6px 4px 6px;
@@ -91,7 +98,7 @@ $oscar-dark: #a88556;
         }
 
         &:after {
-            content: "Oscars";
+            content: "winners ever";
             position: absolute;
             background-color: black;
             color: white;
@@ -104,6 +111,10 @@ $oscar-dark: #a88556;
                 top: 2072px;
                 left: 110px;
             }
+            @include mq($until: mobileLandscape) {
+                top: 2070px;
+                left: 0;
+            }
         }
 
         font-size: 56px;
@@ -113,6 +124,14 @@ $oscar-dark: #a88556;
         desktop) {
             font-size: 48px;
             line-height: 50px;
+        }
+        @include mq($until: tablet) {
+            font-size: 44px;
+            line-height: 50px;
+        }
+        @include mq($until: mobileLandscape) {
+            font-size: 36px;
+            line-height: 42px;
         }
     }
 
@@ -133,8 +152,8 @@ $oscar-dark: #a88556;
         }
 
         .content__headline {
-            @include fs-headline(9);
-            font-weight: 900;
+            //@include fs-headline(9);
+            //font-weight: 900;
         }
     }
 
@@ -185,7 +204,8 @@ $oscar-dark: #a88556;
 
     position: absolute;
     top: 162px;
-    width: 360px;
+    max-width: 400px;
+    width: 96%;
     @include fs-headline(4);
 
     & a {
@@ -200,7 +220,6 @@ $oscar-dark: #a88556;
     @include mq($until: desktop) {
         position: absolute;
         top: 135px;
-        width: 300px;
         font-size: 20px;
         line-height: 25px;
     }
