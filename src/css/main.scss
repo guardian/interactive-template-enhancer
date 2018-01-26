@@ -1,6 +1,6 @@
 @import "mq";
 @import "fonts";
-@import "palette";
+// @import "palette";
 // Uncomment for embeds
 //@import "embed";
 // Uncomment for full screen (including immersive article main media)
@@ -11,10 +11,15 @@
 }
 
 .content__main-column--interactive {
+    display:block;
+    // overflow:auto;
+    height: auto;
+    // min-height: 100% !important;
     &::before {
         content: '';
         display: block;
-        height: 100vh;
+        // height: 200vh;
+        height:593vh;
         width: 0;
         position: absolute;
         top: -400px;
@@ -45,35 +50,39 @@
         font-family: "Guardian Egyptian Web", Georgia;
         font-size: 36px;
         line-height: 42px;
-        font-weight: 200;
+        font-weight: 900;
         color: #333;
         margin-top: 36px;
         margin-bottom: 6px;
     }
     .element--immersive {
         max-width: 1080px;
+        // margin:0 auto;
         margin-left: 0 !important;
         margin-bottom: 36px !important;
+        background:#fff;
     }
     .element--showcase {}
 }
 
 .content__headline {
+
+    display: inline;
     background-color: #ffe500;
     @include fs-header(5);
-    font-size: 48px;
-    line-height: 60px;
-    margin: 0;
-    font-weight: 900;
-    display: inline;
     padding-bottom: 4px;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
     padding: 0px 10px 6px 10px;
     position: relative;
+    font-size: 48px;
+    line-height: 60px;
+    margin: 10px;
+    font-weight: 900;
     top: 60px;
     margin-left: -10px;
-    max-width: 400px;
+    // max-width: 400px !important;
+
 }
 
 .content__standfirst {
@@ -101,17 +110,73 @@
     position: relative;
 }
 
+
+
+@keyframes animatedBackground {
+    0% { background-position: 0 0; filter: blur(5px) sepia() hue-rotate(0deg); }
+    1% { background-position: 0 0; filter: blur(0px) sepia() hue-rotate(80deg); }
+    2% { background-position: 0 0; filter: blur(2px) sepia() hue-rotate(10deg); }
+    3% { background-position: 0 0; filter: blur(0px) sepia() ; }
+    7.5% { background-position: 0 0; filter: blur(0px) sepia(); }
+    8% { background-position: 0 0; filter: blur(20px); }
+    8.1% {background-position: -379px 0; filter: blur(20px);}
+    8.7% {background-position: -379px 0; filter: blur(1px);}
+    17% {background-position: -379px 0; filter: blur(1px);}
+    17.2% {background-position: -379px 0; filter: blur(20px);}
+    17.5% {background-position: -759px 0; filter: blur(2px);}
+    26% { background-position: -759px 0; filter: blur(2px); }
+    27% { background-position: -1142px 0; filter: blur(2px); }
+    36% { background-position: -1528px 0; filter: blur(2px); }
+    45% {background-position: -1908px 0; filter: blur(2px);}
+    54% {background-position: -2228px 0; filter: blur(2px);}
+    63% {background-position: -2668px 0; filter: blur(2px);}
+    73% {background-position: -3048px 0; filter: blur(2px);}
+    82% {background-position: -3428px 0; filter: blur(2px);}
+    91% {background-position: -3808px 0; filter: blur(2px);}
+    100% {background-position: 0 0; filter: blur(2px);}
+}
+
+
 header.content__head.content__head--interactive .gs-container::after {
     display: block;
     content: '';
     width: 380px;
     height: 380px;
     position: absolute;
-    background-color: #00b2ff;
+    background-image: url('<%= path %>/assets/header.jpg');
+    background-position: 0px 0px;
     top: -30px;
     right: 20px;
     border-radius: 300px;
+    // -webkit-animation-name: headerAnimation;
+    // -webkit-animation-duration: 15s;
+    // animation-name: headerAnimation;
+    // animation-duration:15s;
+    animation: animatedBackground ease-in 70s infinite;
+
+  // @include mq(mobile) {
+  //   width:230px;
+  //   height:230px;
+  //   right:-40px;
+  //   border-radius: 200px;
+  //   top: 200px;
+  //
+  //   }
+
 }
+
+header.content__head.content__head--interactive .gs-container::before{
+    display: block;
+    content: '';
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    background-image: url('<%= path %>/assets/logo.svg');
+    background-repeat:no-repeat;
+    top: 10px;
+    left:10px;
+  }
+
 
 .content__main-column {
     margin-right: 30rem;
