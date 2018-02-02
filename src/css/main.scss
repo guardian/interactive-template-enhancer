@@ -10,6 +10,17 @@
     margin: 0 !important;
 }
 
+.fc-container, .facia-container {
+  border-top:0.0625rem solid #dfdfdf !important;
+}
+.l-side-margins::before, .l-side-margins::after {
+  background: transparent !important;
+}
+
+.fc-container .fc-container__inner {
+  border-top:0 solid #dfdfdf !important;
+}
+
 .content__main-column--interactive {
     display:block;
     // overflow:auto;
@@ -19,17 +30,24 @@
         content: '';
         display: block;
         // height: 200vh;
-        height:593vh;
+        height:550vh;
         width: 0;
         position: absolute;
         top: -400px;
         border-right: 1px solid #ccf0ff;
-        @include mq(leftCol) {
+
+        @include mq($from:mobile, $until:leftCol){
+          border-right: 0px solid #ccf0ff;
+          left:0;
+        }
+
+        @include mq($from:leftCol, $until:wide) {
             left: 150px;
         }
-        @include mq(wide) {
+        @include mq($from:wide) {
             left: 230px;
         }
+
     }
 }
 
@@ -70,7 +88,6 @@
     display: inline;
     background-color: #ffe500;
     @include fs-header(5);
-    padding-bottom: 4px;
     -webkit-box-decoration-break: clone !important;
     box-decoration-break: clone !important;
     padding: 0px 10px 6px 10px;
@@ -79,24 +96,87 @@
     line-height: 60px;
     margin: 10px;
     font-weight: 900;
+    z-index:2;
     top: 60px;
     margin-left: -10px;
-    // max-width: 400px !important;
+    max-width: 400px !important;
+
+    @include mq($from:desktop, $until:wide) {
+      font-size:50px;
+      line-height:54px;
+      font-weight:700px;
+      margin-top:20px;
+    }
+
+    @include mq($from:tablet, $until:desktop) {
+    font-size:44px;
+    margin-top:-12px;
+    line-height:48px;
+    margin-left:-40px;
+    }
+
+
+    @include mq($from:mobile, $until:tablet) {
+    font-size:44px;
+    margin-top:-12px;
+    line-height:48px;
+    }
+
+    // @include mq($from:mobile, $until:tablet) {
+    // font-size:32px;
+    // // line-height:36px;
+    // // margin-top:-12px;
+    // // max-width:250px !important;
+    // }
 
 }
 
 .content__standfirst {
+
+
     @include fs-headline(3);
+    font-size:18px;
     font-weight: 300;
-    color: #333;
+    color: #121212;
     max-width: 620px;
-    margin-bottom: 120px;
-    max-width: 360px;
+    margin-bottom: 60px;
+    max-width: 400px !important;
     margin-top: 24px;
     position: relative;
     top: 60px;
     padding-bottom: 24px;
-    max-width: 400px;
+    z-index:2;
+
+    @include mq($from:desktop) {
+      max-width:410px;
+      font-size:20px;
+      line-height:24px;
+    }
+    @include mq($from:tablet, $until:desktop) {
+      max-width:50% !important;
+      line-height:22px;
+      font-size:18px;
+      left:-40px;
+    }
+
+
+    @include mq($from:mobile, $until:mobileLandscape) {
+      max-width:45% !important;
+      line-height:22px;
+      font-size:18px;
+      // padding-bottom:60px;
+      padding-top:250px;
+      padding-bottom:20px;
+    }
+
+    @include mq($from:mobileLandscape, $until:tablet) {
+      max-width:47% !important;
+      line-height:22px;
+      font-size:18px;
+      padding-bottom:20px;
+      padding-top:170px;
+    }
+
 }
 
 .content__meta-container,
@@ -183,24 +263,46 @@ header.content__head.content__head--interactive .gs-container::after {
     height: 380px;
     position: absolute;
     background-image: url('<%= path %>/assets/header.png');
+    border:2px solid #ffe500;
     background-position: 0px 0px;
     top: -30px;
     right: 20px;
-    border-radius: 300px;
-    // -webkit-animation-name: headerAnimation;
-    // -webkit-animation-duration: 15s;
-    // animation-name: headerAnimation;
-    // animation-duration:15s;
-    animation: animatedBackground ease-in 30s infinite;
+    border-radius: 50%;
+    animation: animatedBackground ease-in 45s infinite;
+    -webkit-animation: animatedBackground ease-in 45s infinite;
 
-  // @include mq(mobile) {
-  //   width:230px;
-  //   height:230px;
-  //   right:-40px;
-  //   border-radius: 200px;
-  //   top: 200px;
-  //
-  //   }
+    @include mq($from:mobile, $until:mobileLandscape){
+      height:360px;
+      width:360px;
+      top:150px;
+      left:16%;
+
+    }
+
+    @include mq($from:mobileLandscape, $until:tablet){
+      height:380px;
+      width:380px;
+      top:106px;
+      left:34%;
+
+    }
+
+    @include mq($from:tablet, $until:desktop) {
+      height:350px;
+      width:350px;
+      top:-10px;
+      left:54%;
+    }
+
+    @include mq($from:desktop, $until:leftCol) {
+
+      top:-36px;
+      left:560px;
+    }
+
+    @include mq($from: leftCol) {
+
+    }
 
 }
 
@@ -214,9 +316,70 @@ header.content__head.content__head--interactive .gs-container::before{
     background-repeat:no-repeat;
     top: 10px;
     left:10px;
+
+    @include mq($from:leftCol, $until:wide){
+      height:100px;
+      background-image: url('<%= path %>/assets/logo2.svg');
+    }
+
+    @include mq($from:tablet, $until:desktop){
+      position:relative;
+      left:-40px;
+      height:120px;
+      background-image: url('<%= path %>/assets/logo.svg');
+      margin-bottom:-60px;
+
+    }
+
+    @include mq($from:desktop, $until:leftCol){
+      position:relative;
+      left:-10px;
+      height:120px;
+      background-image: url('<%= path %>/assets/logo.svg');
+      margin-bottom:-60px;
+
+    }
+
+    @include mq($from:mobile, $until:mobileLandscape){
+      position:relative;
+      left:0;
+      height:122px;
+      background-image: url('<%= path %>/assets/logo2.svg');
+      margin-bottom:-70px;
+
+    }
+
+    @include mq($from:mobileLandscape, $until:tablet){
+      position:relative;
+      left:0;
+      height:122px;
+      background-image: url('<%= path %>/assets/logo.svg');
+      margin-bottom:-60px;
+
+    }
+
+
+
+
+  }
+ .content__labels--not-immersive {
+    @include mq($from:mobile) {
+      display:none;
+    }
   }
 
 
+
 .content__main-column {
-    margin-right: 30rem;
+    // margin-right: 30rem;
+
+    @include mq($from:desktop, $until:leftCol){
+      // left:10px;
+      margin-right:24rem;
+    }
+
+    @include mq($from:tablet, $until:desktop){
+      // left:10px;
+      margin-right:10rem;
+    }
 }
