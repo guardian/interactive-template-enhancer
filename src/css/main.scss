@@ -74,7 +74,7 @@
         margin-bottom: 6px;
     }
     .element--immersive {
-        max-width: 1080px;
+        max-width: 1260px;
         // margin:0 auto;
         margin-left: 0 !important;
         margin-bottom: 36px !important;
@@ -491,7 +491,7 @@ header.content__head.content__head--interactive .gs-container::before{
     @include fs-header(5);
 
     font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia;
-    font-weight: 700; 
+    font-weight: 700;
 
     -webkit-box-decoration-break: clone !important;
     box-decoration-break: clone !important;
