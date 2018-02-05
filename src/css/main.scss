@@ -262,7 +262,7 @@ header.content__head.content__head--interactive .gs-container::after {
     width: 380px;
     height: 380px;
     position: absolute;
-    background-image: url('<%= path %>/assets/header.png');
+    background-image: url('<%= path %>/assets/header.jpg');
     border:2px solid #ffe500;
     background-position: 0px 0px;
     top: -30px;
@@ -437,7 +437,7 @@ header.content__head.content__head--interactive .gs-container::before{
     width: 380px;
     height: 380px;
     position: absolute;
-    background-image: url('<%= path %>/assets/header.png');
+    background-image: url('<%= path %>/assets/header.jpg');
     border:2px solid #ffe500;
     background-position: 0px 0px;
     top: -30px;
