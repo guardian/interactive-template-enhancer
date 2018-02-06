@@ -198,55 +198,55 @@
     1.5% { background-position: 0 0; filter: blur(2px) sepia() hue-rotate(80deg); }
     2% { background-position: 0 0; filter: blur(0px); }
     7.8% { background-position: 0 0; filter: blur(0px); }
-    8% { background-position: 0 0; filter: blur(20px); }
+    8.09% { background-position: 0 0; filter: blur(20px); }
     //second photo
     8.1% {background-position: -379px 0; filter: blur(20px);}
-    8.2% {background-position: -379px 0; filter: blur(0px);}
-    16.8% {background-position: -379px 0; filter: blur(0px);}
-    16.9% {background-position: -379px 0; filter: blur(30px)sepia();}
+    8.15% {background-position: -379px 0; filter: blur(0px);}
+    16.9% {background-position: -379px 0; filter: blur(0px);}
+    16.99% {background-position: -379px 0; filter: blur(30px);}
     //third photo
-    17% {background-position: -759px 0; filter: blur(30px) sepia();}
+    17% {background-position: -759px 0; filter: blur(30px);}
     17.1% {background-position: -759px 0; filter: blur(0px);}
     25.8% {background-position: -759px 0; filter: blur(0px);}
     26% {background-position: -759px 0; filter: blur(30px);}
     //fourth photo
     26.1% { background-position: -1142 0; filter: blur(30px); }
-    26.3% { background-position: -1142px 0; filter: blur(0px); }
+    26.11% { background-position: -1142px 0; filter: blur(0px); }
     35.4% { background-position: -1142px 0; filter: blur(0px); }
-    35.6% { background-position: -1142px 0; filter: blur(20px) sepia(); }
+    35.69% { background-position: -1142px 0; filter: blur(20px) sepia(); }
     //fifth photo
     35.7% { background-position: -1528px 0; filter: blur(25px) sepia(); }
     35.9% {background-position: -1528px 0; filter: blur(2px) hue-rotate(30deg);}
     36% {background-position: -1528px 0; filter: blur(0px) ;}
     44.6% {background-position: -1528px 0; filter: blur(0px) ;}
-    44.7% {background-position: -1528px 0; filter: blur(25px) ;}
+    44.79% {background-position: -1528px 0; filter: blur(25px) ;}
     //sixth photo
     44.8% {background-position: -1908px 0; filter: blur(15px) sepia();}
     45% {background-position: -1908px 0; filter: blur(0px);}
     53% {background-position: -1908px 0; filter: blur(0px);}
-    53.1% {background-position: -1908px 0; filter: blur(25px) sepia();}
+    53.29% {background-position: -1908px 0; filter: blur(25px) sepia();}
     //seventh photo
     53.3% {background-position: -2287px  0; filter: blur(25px) sepia();}
     53.5% {background-position: -2287px  0; filter: blur(0px) sepia();}
     53.7% {background-position: -2287px  0; filter: blur(7px) sepia();}
     53.9% {background-position: -2287px  0; filter: blur(0px);}
     61% {background-position: -2287px  0; filter: blur(0px);}
-    61.1% {background-position: -2287px  0; filter: blur(30px);}
+    61.29% {background-position: -2287px  0; filter: blur(30px);}
     //eighth photo
     61.3% {background-position: -2668px 0; filter: blur(30px);}
     61.4% {background-position: -2668px 0; filter: blur(0px);}
     71% {background-position: -2668px 0; filter: blur(0px);}
-    71.1% {background-position: -2668px 0; filter: blur(30px);}
+    71.29% {background-position: -2668px 0; filter: blur(30px);}
     //ninth photo
     71.3% {background-position: -3048px 0; filter: blur(25px);}
     71.4% {background-position: -3048px 0; filter: blur(0px);}
     81.9% {background-position: -3048px 0; filter: blur(0px);}
-    82% {background-position: -3048px 0; filter: blur(16px) sepia();}
+    82.19% {background-position: -3048px 0; filter: blur(16px) sepia();}
     //tenth photo
     82.2% {background-position: -3428px 0; filter: blur(25px) sepia();}
     82.3% {background-position: -3428px 0; filter: blur(0px);}
     89.6% {background-position: -3428px 0; filter: blur(0px);}
-    89.7% {background-position: -3428px 0; filter: blur(20px);}
+    89.89% {background-position: -3428px 0; filter: blur(20px);}
     //eleventh photo
     89.9% {background-position: -3800px 0; filter: blur(20px);}
     90% {background-position: -3800px 0; filter: blur(0px);}
@@ -255,56 +255,86 @@
     100% {background-position: 0 0; filter: blur(20px) sepia();}
 }
 
+.gv-loop {
+      display: block;
+      width: 380px;
+      height: 380px;
+      position: absolute;
+      border:2px solid #ffe500;
+      top: -30px;
+      right: 20px;
+      border-radius: 100%;
+      overflow: hidden;
 
-header.content__head.content__head--interactive .gs-container::after {
-    display: block;
-    content: '';
-    width: 380px;
-    height: 380px;
-    position: absolute;
-    background-image: url('<%= path %>/assets/header.jpg');
-    border:2px solid #ffe500;
-    background-position: 0px 0px;
-    top: -30px;
-    right: 20px;
-    border-radius: 50%;
-    animation: animatedBackground ease-in 45s infinite;
-    -webkit-animation: animatedBackground ease-in 45s infinite;
+      @include mq($from:mobile, $until:mobileLandscape){
+        height:360px;
+        width:360px;
+        top:150px;
+        left:10px;
 
-    @include mq($from:mobile, $until:mobileLandscape){
-      height:360px;
-      width:360px;
-      top:150px;
-      left:16%;
+      }
 
-    }
+      @include mq($from:mobileLandscape, $until:tablet){
+        height:380px;
+        width:380px;
+        top:106px;
+        left:34%;
 
-    @include mq($from:mobileLandscape, $until:tablet){
-      height:380px;
-      width:380px;
-      top:106px;
-      left:34%;
+      }
 
-    }
+      @include mq($from:tablet, $until:desktop) {
+        height:350px;
+        width:350px;
+        top:-10px;
+        left:54%;
+      }
 
-    @include mq($from:tablet, $until:desktop) {
-      height:350px;
-      width:350px;
-      top:-10px;
-      left:54%;
-    }
+      @include mq($from:desktop, $until:leftCol) {
 
-    @include mq($from:desktop, $until:leftCol) {
+        top:-36px;
+        left:560px;
+      }
+}
 
-      top:-36px;
-      left:560px;
-    }
+.gv-loop-inner {
+      display: block;
+      width: 380px;
+      height: 380px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      background-image: url('<%= path %>/assets/header.jpg');
+      animation: animatedBackground ease-in-out 45s infinite;
+      -webkit-animation: animatedBackground ease-in-out 45s infinite;
 
-    @include mq($from: leftCol) {
+      @include mq($from:mobile, $until:mobileLandscape){
+        height:360px;
+        width:360px;
 
-    }
+
+      }
+
+      @include mq($from:mobileLandscape, $until:tablet){
+        height:380px;
+        width:380px;
+
+      }
+
+      @include mq($from:tablet, $until:desktop) {
+        height:350px;
+        width:350px;
+
+      }
 
 }
+
+.content__head--interactive .gs-container {
+
+    @include mq($until:tablet){
+      overflow: hidden;
+    }
+}
+
 
 header.content__head.content__head--interactive .gs-container::before{
     display: block;
