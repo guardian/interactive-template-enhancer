@@ -23,14 +23,14 @@
 
 .content__main-column--interactive {
     display:block;
-    // overflow:auto;
+    overflow:hidden;
     height: auto;
     // min-height: 100% !important;
     &::before {
         content: '';
         display: block;
         // height: 200vh;
-        height:550vh;
+        height:800vh;
         width: 0;
         position: absolute;
         top: -400px;
