@@ -106,6 +106,7 @@
       line-height:54px;
       font-weight:700px;
       margin-top:20px;
+      margin-right: 120px;
     }
 
     @include mq($from:tablet, $until:desktop) {
