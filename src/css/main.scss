@@ -426,94 +426,44 @@ header.content__head.content__head--interactive .gs-container::before{
     position: relative;
     overflow: hidden;
 
-    &::before {
-        content: '';
-        display: block;
+      &::before {
+          content: '';
+          display: block;
 
-        width: 240px;
-        height: 240px;
-        background-repeat: no-repeat;
-        position: absolute;
-        border-right: 1px solid #ccf0ff;
+          width: 240px;
+          height: 240px;
+          background-repeat: no-repeat;
+          position: absolute;
+          border-right: 1px solid #ccf0ff;
 
-        top: 12px;
-        left: 10px;
+          top: 12px;
+          left: 10px;
 
-        @include mq($from:mobile, $until:leftCol){
-          border-right: 0px solid #ccf0ff;
+          @include mq($from:mobile, $until:leftCol){
+            border-right: 0px solid #ccf0ff;
+          }
+
+          @include mq($from:mobile, $until:mobileLandscape){
+          position:relative;
+          height:122px;
+          background-image: url('<%= path %>/assets/logo2.svg');
+          margin-bottom:-70px;
+
         }
 
-        @include mq($from:mobile, $until:mobileLandscape){
-        position:relative;
-        height:122px;
-        background-image: url('<%= path %>/assets/logo2.svg');
-        margin-bottom:-70px;
+        @include mq($from:mobileLandscape, $until:tablet){
+          position:relative;
+          height:122px;
+          background-image: url('<%= path %>/assets/logo.svg');
+          margin-bottom:-60px;
+
+        }
 
       }
-
-      @include mq($from:mobileLandscape, $until:tablet){
-        position:relative;
-        height:122px;
-        background-image: url('<%= path %>/assets/logo.svg');
-        margin-bottom:-60px;
-
-      }
-
     }
 
 
-    // &:after {
-    // display: block;
-    // content: '';
-    // width: 380px;
-    // height: 380px;
-    // position: absolute;
-    // background-image: url('<%= path %>/assets/header.jpg');
-    // border:2px solid #ffe500;
-    // background-position: 0px 0px;
-    // top: -30px;
-    // right: 20px;
-    // border-radius: 50%;
-    // animation: animatedBackground ease-in 45s infinite;
-    // -webkit-animation: animatedBackground ease-in 45s infinite;
-    //
-    // @include mq($from:mobile, $until:mobileLandscape){
-    //   height:360px;
-    //   width:360px;
-    //   top:150px;
-    //   left:16%;
-    //
-    // }
-    //
-    // @include mq($from:mobileLandscape, $until:tablet){
-    //   height:380px;
-    //   width:380px;
-    //   top:106px;
-    //   left:34%;
-    //
-    // }
-    //
-    // @include mq($from:tablet, $until:desktop) {
-    //   height:350px;
-    //   width:350px;
-    //   top:-10px;
-    //   left:54%;
-    // }
-    //
-    // @include mq($from:desktop, $until:leftCol) {
-    //
-    //   top:-36px;
-    //   left:560px;
-    // }
-    //
-    // @include mq($from: leftCol) {
-    //
-    // }
-// 
-// }
-
-
-  }
+}
 
   .headline {
 
@@ -576,37 +526,53 @@ header.content__head.content__head--interactive .gs-container::before{
 
   }
 
-  // .content__main-column--interactive {
-  //   &>p,
-  //   &>h2,
-  //   .element-interactive,
-  //   .element-atom {
-  //     max-width: 620px;
-  //     @include mq(leftCol) {
-  //       margin-left: 160px !important;
-  //     }
-  //     @include mq(wide) {
-  //       margin-left: 240px !important;
-  //     }
-  //   }
-  //   &>h2 {
-  //     font-family: "Guardian Egyptian Web", Georgia;
-  //     font-size: 36px;
-  //     line-height: 42px;
-  //     font-weight: 900;
-  //     color: #333;
-  //     margin-top: 36px;
-  //     margin-bottom: 6px;
-  //   }
-  //   .element--immersive {
-  //     max-width: 1080px;
-  //     // margin:0 auto;
-  //     margin-left: 0 !important;
-  //     margin-bottom: 36px !important;
-  //     background:#fff;
-  //   }
-  //   .element--showcase {}
-  // }
+
+.ios .article__header {
+
+  &:after {
+  display: block;
+  content: '';
+  width: 380px;
+  height: 380px;
+  position: absolute;
+  background-image: url('<%= path %>/assets/header.jpg');
+  border:2px solid #ffe500;
+  background-position: 0px 0px;
+  top: -30px;
+  right: 20px;
+  border-radius: 50%;
+  animation: animatedBackground ease-in 45s infinite;
+  -webkit-animation: animatedBackground ease-in 45s infinite;
+
+  @include mq($until:mobileLandscape){
+    height:360px;
+    width:360px;
+    top:224px;
+    left:10px;
+
+  }
+
+  @include mq($from:mobileLandscape, $until:tablet){
+    height:380px;
+    width:380px;
+    top:106px;
+    left:34%;
+
+  }
+
+  @include mq($from:tablet, $until:desktop) {
+    height:350px;
+    width:350px;
+    top:-10px;
+    left:54%;
+  }
+
+  @include mq($from:desktop, $until:leftCol) {
+
+    top:-36px;
+    left:560px;
+  }
+}
 
 
 }
