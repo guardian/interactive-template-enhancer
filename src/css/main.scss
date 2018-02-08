@@ -166,7 +166,7 @@
       line-height:22px;
       font-size:18px;
       // padding-bottom:60px;
-      padding-top:250px;
+      padding-top:320px;
       padding-bottom:20px;
     }
 
@@ -267,7 +267,7 @@
       border-radius: 100%;
       overflow: hidden;
       -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
-      
+
       @include mq($until:mobileLandscape){
         height:360px;
         width:360px;
