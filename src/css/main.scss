@@ -162,7 +162,7 @@
 
 
     @include mq($from:mobile, $until:mobileLandscape) {
-      max-width:45% !important;
+      //max-width:45% !important;
       line-height:22px;
       font-size:18px;
       // padding-bottom:60px;
@@ -171,7 +171,7 @@
     }
 
     @include mq($from:mobileLandscape, $until:tablet) {
-      max-width:47% !important;
+      //max-width:47% !important;
       line-height:22px;
       font-size:18px;
       padding-bottom:20px;
@@ -266,7 +266,8 @@
       right: 20px;
       border-radius: 100%;
       overflow: hidden;
-
+      -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+      
       @include mq($until:mobileLandscape){
         height:360px;
         width:360px;
