@@ -108,9 +108,10 @@ a, .u-fauxlink {
   margin: 0 0 10px 10px;
   float: right;
   width: 40%;
-  font-size: 12px;
-  background: #f6f6f6;
+  border-top: 3px solid #000;
+  background: #fff;
   padding: 10px;
+  @include TextSans(3);
 
   @include mq(leftCol) {
       width: 150px;
