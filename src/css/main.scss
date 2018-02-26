@@ -110,8 +110,10 @@ a, .u-fauxlink {
   width: 40%;
   border-top: 3px solid #000;
   background: #fff;
-  padding: 10px;
+  padding: 10px 0;
   font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-size: 13px;
+  line-height:18px;
 
   @include mq(leftCol) {
       width: 150px;
