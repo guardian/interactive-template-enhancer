@@ -46,6 +46,24 @@
   }
 }
 
+a, .u-fauxlink {
+    color: #c70000;
+    cursor: pointer;
+    text-decoration: none;
+}
+.tonal--tone-news .tone-colour{
+      color: #c70000;
+}
+
+.content__meta-container{
+  background-image: repeating-linear-gradient(to bottom, #dcdcdc, #dcdcdc 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+  background-repeat: repeat-x;
+  background-position: top;
+  -webkit-background-size: 0.0625rem 0.8125rem;
+  background-size: 0.0625rem 0.8125rem;
+  padding-top: 12px;
+  border-top: none;
+}
 .content__main-column--interactive {
     & > p, & > h2, .element-interactive,.element-atom {
         max-width: 620px;
