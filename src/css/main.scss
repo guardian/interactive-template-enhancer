@@ -111,7 +111,7 @@ a, .u-fauxlink {
   border-top: 3px solid #000;
   background: #fff;
   padding: 10px;
-  @include TextSans(3);
+  font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 
   @include mq(leftCol) {
       width: 150px;
