@@ -1,6 +1,6 @@
 @import "mq";
 
-.content--interactive .content__headline {
+.content--interactive .content__headline, .headline {
   font-size: 32px;
   line-height: 35.2px;
   font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
@@ -11,7 +11,11 @@
   }
 }
 
-.content__standfirst {
+.headline {
+  font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
+}
+
+.content__standfirst, .standfirst {
 
   font-weight: 200;
   line-height: 25px;
@@ -65,7 +69,7 @@ a, .u-fauxlink {
   border-top: none;
 }
 .content__main-column--interactive {
-    & > p, & > h2, .element-interactive,.element-atom {
+    & > p, & > h2,& > ul,  .element-interactive,.element-atom {
         max-width: 620px;
 
         @include mq(leftCol) {
@@ -95,4 +99,34 @@ a, .u-fauxlink {
     .element--showcase {
 
     }
+
+
+}
+
+.content__main-column--interactive blockquote, .prose blockquote {
+  font-style: normal;
+  margin: 0 0 10px 10px;
+  float: right;
+  width: 40%;
+  font-size: 12px;
+  background: #f6f6f6;
+  padding: 10px;
+
+  @include mq(leftCol) {
+      width: 150px;
+      float: left;
+      margin: 0;
+  }
+  @include mq(wide) {
+      width: 210px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+}
+
+.prose blockquote.quoted::before {
+  display: none;
 }
