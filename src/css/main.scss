@@ -118,7 +118,7 @@ a, .u-fauxlink {
   line-height:18px;
 
   @include mq(leftCol) {
-      width: 170px;
+      width: 150px;
       float: left;
       margin: 0;
   }
