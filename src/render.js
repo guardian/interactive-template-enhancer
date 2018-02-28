@@ -1,3 +1,4 @@
 export async function render() {
-    return "";
+    // return `Datestamp: ${new Date()}`;
+    return '';
 }
