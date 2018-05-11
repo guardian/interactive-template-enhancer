@@ -5,6 +5,9 @@
   line-height: 35.2px;
   font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
   font-weight: 700;
+  @include mq($from:mobileLandscape, $until:leftCol){
+    max-width: 60%;
+  }
   @include mq(leftCol) {
     font-size: 50px;
     line-height: 54px;
@@ -20,9 +23,14 @@
   font-weight: 200;
   line-height: 25px;
   font-size: 22px;
-  max-width: 280px;
+  max-width: 60%;
+
+  @include mq($from:mobileLandscape, $until:tablet){
+    max-width: 60%;
+  }
   @include mq(leftCol) {
     max-width: 460px;
+
   }
 }
 
@@ -134,4 +142,62 @@ a, .u-fauxlink {
 
 .prose blockquote.quoted::before {
   display: none;
+}
+
+
+
+.gv-loop {
+  z-index: -1;
+  display: block;
+  width: 380px;
+  height: 380px;
+  position: absolute;
+  border:4px solid #ffe500;
+  top: -30px;
+  right: 20px;
+  border-radius: 100%;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+
+  @include mq($until:mobileLandscape){
+    height:240px;
+    width:240px;
+    top:80px;
+    right:-80px;
+
+  }
+
+  @include mq($from:mobileLandscape, $until:tablet){
+    height:240px;
+    width:240px;
+    top:20px;
+   
+    right: 0;
+  }
+
+  @include mq($from:tablet, $until:desktop) {
+    height:240px;
+    width:240px;
+    top:20px;
+ 
+  }
+
+  @include mq($from:desktop, $until:leftCol) {
+
+    top:-36px;
+    left:560px;
+  }
+}
+
+.gv-loop-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-image: url(https://media.guim.co.uk/b8c55668f06f78c92a153681abaf9c9fc17a2936/432_0_1809_1809/500.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
