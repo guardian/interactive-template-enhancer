@@ -33,6 +33,13 @@
 
   }
 }
+.content .gs-container {
+  
+  @include mq($until:desktop) {
+    overflow: hidden;
+  }
+}
+
 
 .content__main, .content__head {
   position: relative;
@@ -160,8 +167,8 @@ a, .u-fauxlink {
   -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
 
   @include mq($until:mobileLandscape){
-    height:240px;
-    width:240px;
+    height:220px;
+    width:220px;
     top:80px;
     right:-80px;
 
@@ -170,9 +177,9 @@ a, .u-fauxlink {
   @include mq($from:mobileLandscape, $until:tablet){
     height:240px;
     width:240px;
-    top:20px;
+    top:40px;
    
-    right: 0;
+    right: -60px;
   }
 
   @include mq($from:tablet, $until:desktop) {
@@ -184,7 +191,7 @@ a, .u-fauxlink {
 
   @include mq($from:desktop, $until:leftCol) {
 
-    top:-36px;
+    top:-60px;
     left:560px;
   }
 }
@@ -200,4 +207,9 @@ a, .u-fauxlink {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  @include mq($until:tablet){
+    background-image: url(https://media.guim.co.uk/b8c55668f06f78c92a153681abaf9c9fc17a2936/1084_178_804_804/500.jpg);
+
+  }
 }
