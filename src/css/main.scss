@@ -155,6 +155,11 @@ a, .u-fauxlink {
 
 .gv-loop {
   z-index: -1;
+
+  .android &, .ios &{
+    z-index: 1;
+  }
+
   display: block;
   width: 380px;
   height: 380px;
