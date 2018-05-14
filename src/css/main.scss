@@ -34,7 +34,7 @@
   }
 }
 .content .gs-container {
-  
+
   @include mq($until:desktop) {
     overflow: hidden;
   }
@@ -97,8 +97,8 @@ a, .u-fauxlink {
 
     & > h2 {
     	font-family: "Guardian Egyptian Web", Georgia;
-    	font-size: 36px;
-    	line-height: 42px;
+    	font-size: 28px;
+    	line-height: 32px;
     	font-weight: 700;
     	color: #333;
     	margin-top: 36px;
@@ -164,7 +164,7 @@ a, .u-fauxlink {
   width: 380px;
   height: 380px;
   position: absolute;
-  border:4px solid #ffe500;
+  //border:4px solid #ffe500;
   top: -30px;
   right: 20px;
   border-radius: 100%;
@@ -183,7 +183,7 @@ a, .u-fauxlink {
     height:240px;
     width:240px;
     top:40px;
-   
+
     right: -60px;
   }
 
@@ -191,7 +191,7 @@ a, .u-fauxlink {
     height:240px;
     width:240px;
     top:20px;
- 
+
   }
 
   @include mq($from:desktop, $until:leftCol) {
