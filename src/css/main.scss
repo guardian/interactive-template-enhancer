@@ -23,7 +23,7 @@
   font-weight: 200;
   line-height: 25px;
   font-size: 22px;
-  max-width: 60%;
+  max-width: 56%;
 
   @include mq($from:mobileLandscape, $until:tablet){
     max-width: 60%;
