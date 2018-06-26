@@ -54,6 +54,11 @@
       left: calc((100% - 1300px)/2 + 250px);
     }
   }
+
+  .byline {
+    border-top: none !important;
+    margin-top: 5px;
+  }
 }
 
 a, .u-fauxlink {
